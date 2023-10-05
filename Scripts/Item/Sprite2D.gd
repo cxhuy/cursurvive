@@ -7,5 +7,6 @@ var imagePath
 func _ready():
 	imagePath = itemPaths[get_node("..").itemId]
 	if imagePath:
+		self.scale = Vector2(2, 2)		
 		var texture = load(imagePath)
 		self.texture = texture

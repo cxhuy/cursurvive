@@ -4,12 +4,13 @@
 [ext_resource type="Script" path="res://Scripts/Item/item.gd" id="1_qt3c2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8gdg7"]
-radius = 14.0
+radius = 28.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hn6h8"]
-radius = 16.0
+radius = 32.0
 
 [node name="Item" type="RigidBody2D"]
+scale = Vector2(2, 2)
 collision_layer = 8
 collision_mask = 4
 gravity_scale = 0.0
