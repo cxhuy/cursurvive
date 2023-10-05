@@ -12,7 +12,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if Game.player_dead:
+		death()
 	
 
 func _physics_process(delta):
@@ -20,3 +21,7 @@ func _physics_process(delta):
 	selfPos = self.global_position
 	self.velocity = (mousePos - selfPos) * SPEED * delta	
 	move_and_slide()
+	
+	
+func death():
+	self.queue_free()
