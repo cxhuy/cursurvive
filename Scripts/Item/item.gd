@@ -23,4 +23,5 @@ func _on_area_2d_body_entered(body):
 			0: # Pointer attack
 				var pointerInstance = pointer.instantiate()
 				Game.add_child(pointerInstance)
+	Game.get_node("Items").addItem()
 	self.queue_free()
