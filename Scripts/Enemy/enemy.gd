@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+const SPEED = 10000
+
 var Player
 
 # Called when the node enters the scene tree for the first time.
@@ -15,6 +17,8 @@ func _process(delta):
 func _physics_process(delta):
 	if Player != null:
 		look_at(Player.global_position)
+		velocity = Vector2(cos(rotation), sin(rotation)) * SPEED * delta
+		move_and_slide()
 	
 
 func _on_area_2d_body_entered(body):
