@@ -30,6 +30,7 @@ window/size/viewport_height=1200
 2d_physics/layer_2="Enemy"
 2d_physics/layer_3="Background"
 2d_physics/layer_4="Item"
+2d_physics/layer_5="Attack"
 
 [rendering]
 

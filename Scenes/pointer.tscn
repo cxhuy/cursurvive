@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://c57eeu5o30dne"]
+[gd_scene load_steps=4 format=3 uid="uid://c57eeu5o30dne"]
 
 [ext_resource type="Script" path="res://Scripts/Attacks/Pointer/pointer.gd" id="1_2g7un"]
 [ext_resource type="Texture2D" uid="uid://b07sejpqaqv24" path="res://Sprites/Attacks/Pointer/pointer.png" id="1_jbr5l"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cbwqr"]
+radius = 8.67
+height = 21.3333
 
 [node name="Pointer" type="CharacterBody2D"]
 scale = Vector2(3, 3)
@@ -9,3 +13,12 @@ script = ExtResource("1_2g7un")
 
 [node name="Pointer" type="Sprite2D" parent="."]
 texture = ExtResource("1_jbr5l")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_cbwqr")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -22,3 +22,7 @@ func _physics_process(delta):
 		self.rotation_degrees -= 25
 		self.global_position.x += cos(deg_to_rad(self.rotation_degrees - 90)) * offset
 		self.global_position.y += sin(deg_to_rad(self.rotation_degrees - 90)) * offset
+		
+		
+func _on_area_2d_body_entered(body):
+	body.queue_free()
