@@ -14,12 +14,10 @@ script = ExtResource("1_f13y5")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(2.84217e-14, 5.68434e-14)
-scale = Vector2(1, 1)
 script = ExtResource("1_glj3p")
 
 [node name="Cursor" type="Sprite2D" parent="Marker2D"]
 position = Vector2(3.38813e-21, 6.77626e-21)
-scale = Vector2(1, 1)
 texture = ExtResource("1_iw2s4")
 offset = Vector2(2, 0)
 
