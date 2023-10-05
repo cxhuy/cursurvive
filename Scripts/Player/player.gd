@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
-var SPEED = 400
+const SPEED = 400
+
+var mousePos
+var selfPos
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,5 +16,7 @@ func _process(delta):
 	
 
 func _physics_process(delta):
-	self.velocity = (get_global_mouse_position() - self.global_position) * SPEED * delta
+	mousePos = get_global_mouse_position()
+	selfPos = self.global_position
+	self.velocity = (mousePos - selfPos) * SPEED * delta	
 	move_and_slide()
