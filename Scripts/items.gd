@@ -5,7 +5,7 @@ extends Node2D
 func _ready():
 	var sceneInstance = preload("res://Scenes/item.tscn")
 	var instance = sceneInstance.instantiate()
-	instance.get_node("Sprite2D").imagePath = "res://Sprites/Items/pointer_item.png"
+	instance.itemId = 0
 	instance.position = Vector2(200, 200)
 	add_child(instance)
 
