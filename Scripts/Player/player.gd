@@ -23,4 +23,5 @@ func _physics_process(delta):
 	
 	
 func death():
-	self.queue_free()
+	get_tree().paused = true
+#	self.queue_free()
