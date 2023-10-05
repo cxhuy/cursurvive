@@ -1,7 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4ivcn2gw3idh"]
+[gd_scene load_steps=7 format=3 uid="uid://c4ivcn2gw3idh"]
 
 [ext_resource type="Texture2D" uid="uid://dn4iadu6sqrwe" path="res://background.jpeg" id="1_lb466"]
 [ext_resource type="PackedScene" uid="uid://c2edtnna75yxj" path="res://Scenes/player.tscn" id="2_td4pr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uunlo"]
+size = Vector2(1984, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0pslj"]
+size = Vector2(32, 1200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_egel7"]
+size = Vector2(1984, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2jwsb"]
+size = Vector2(32, 1200)
 
 [node name="Game" type="Node2D"]
 
@@ -11,3 +23,21 @@ texture = ExtResource("1_lb466")
 
 [node name="Player" parent="." instance=ExtResource("2_td4pr")]
 position = Vector2(176, 272)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(960, -16)
+
+[node name="Top" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_uunlo")
+
+[node name="Left" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-976, 616)
+shape = SubResource("RectangleShape2D_0pslj")
+
+[node name="Bottom" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 1232)
+shape = SubResource("RectangleShape2D_egel7")
+
+[node name="Right" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(976, 616)
+shape = SubResource("RectangleShape2D_2jwsb")
