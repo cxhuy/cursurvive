@@ -8,10 +8,11 @@ var rotationSpeed
 func _ready():
 	imagePath = itemPaths[get_node("..").itemId]
 	if imagePath:
-		self.scale = Vector2(2, 2)		
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, "scale", Vector2(2, 2), 0.2)	
 		var texture = load(imagePath)
 		self.texture = texture
-	rotationSpeed = randi_range(-5, 5) * 0.1
+	rotationSpeed = randf_range(-0.5, 0.5)
 		
 		
 func _process(delta):
