@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bd4lfvp0slb01"]
+
+[ext_resource type="Texture2D" uid="uid://swkveyq75bwo" path="res://Sprites/Enemy/enemy.png" id="1_iwp77"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_olv7n"]
+
+[node name="Enemy" type="CharacterBody2D"]
+
+[node name="Enemy" type="Sprite2D" parent="."]
+texture = ExtResource("1_iwp77")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_olv7n")

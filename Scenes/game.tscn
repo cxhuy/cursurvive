@@ -22,7 +22,7 @@ position = Vector2(960, 600)
 texture = ExtResource("1_lb466")
 
 [node name="Player" parent="." instance=ExtResource("2_td4pr")]
-position = Vector2(176, 272)
+position = Vector2(960, 600)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(960, -16)
