@@ -13,9 +13,10 @@ func _process(delta):
 	
 	
 func _physics_process(delta):
-	look_at(player.global_position)
+	if player != null:
+		look_at(player.global_position)
 	
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
-		Game.player_dead = true
+		player.death()
