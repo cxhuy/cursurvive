@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2edtnna75yxj"]
+[gd_scene load_steps=4 format=3 uid="uid://c2edtnna75yxj"]
 
+[ext_resource type="Script" path="res://Scripts/Player/Marker2D.gd" id="1_glj3p"]
 [ext_resource type="Texture2D" uid="uid://ctke61eoibyoj" path="res://Sprites/Player/cursor.png" id="1_iw2s4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ak7yk"]
@@ -8,10 +9,17 @@ radius = 4.0
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(2.5, 2.5)
 
-[node name="Cursor" type="Sprite2D" parent="."]
-position = Vector2(6, -9.5)
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(2.84217e-14, 5.68434e-14)
+scale = Vector2(1, 1)
+script = ExtResource("1_glj3p")
+
+[node name="Cursor" type="Sprite2D" parent="Marker2D"]
+position = Vector2(3.38813e-21, 6.77626e-21)
+scale = Vector2(1, 1)
 texture = ExtResource("1_iw2s4")
+offset = Vector2(2, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4, -10)
+position = Vector2(-2.38419e-07, 3.38813e-21)
 shape = SubResource("CircleShape2D_ak7yk")
