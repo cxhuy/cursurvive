@@ -4,7 +4,7 @@ var itemId
 var Player
 var Game
 var pointer = preload("res://Scenes/pointer.tscn")
-
+var velocity = Vector2(randi_range(-50, 50), randi_range(-50, 50))
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,6 +16,12 @@ func _ready():
 func _process(delta):
 	pass
 
+
+func _physics_process(delta):
+	var collision = move_and_collide(velocity * delta)
+	if collision:
+		velocity = velocity.bounce(collision.get_normal())
+		
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
