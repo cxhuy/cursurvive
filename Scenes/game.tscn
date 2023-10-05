@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4ivcn2gw3idh"]
+[gd_scene load_steps=9 format=3 uid="uid://c4ivcn2gw3idh"]
 
 [ext_resource type="Texture2D" uid="uid://dn4iadu6sqrwe" path="res://background.jpeg" id="1_lb466"]
 [ext_resource type="PackedScene" uid="uid://c2edtnna75yxj" path="res://Scenes/player.tscn" id="2_td4pr"]
 [ext_resource type="Script" path="res://Scripts/Enemy/enemySpawn.gd" id="4_noyw3"]
+[ext_resource type="Script" path="res://Scripts/items.gd" id="4_rv6gd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uunlo"]
 size = Vector2(1984, 32)
@@ -49,5 +50,8 @@ script = ExtResource("4_noyw3")
 
 [node name="Timer" type="Timer" parent="Enemies"]
 autostart = true
+
+[node name="Items" type="Node2D" parent="."]
+script = ExtResource("4_rv6gd")
 
 [connection signal="timeout" from="Enemies/Timer" to="Enemies" method="_on_timer_timeout"]
