@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://qi4p3dq65imb"]
+[gd_scene load_steps=6 format=3 uid="uid://qi4p3dq65imb"]
 
 [ext_resource type="Script" path="res://Scripts/Attacks/DVD/disc.gd" id="1_cmj6p"]
 [ext_resource type="Texture2D" uid="uid://dbuek3ldups5a" path="res://Sprites/Attacks/DVD/DVD-R.png" id="1_tgel8"]
+[ext_resource type="Script" path="res://Scripts/Attacks/DVD/dvd-r.gd" id="3_4pgi2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oc8mp"]
 radius = 128.0
@@ -27,6 +28,7 @@ shape = SubResource("CircleShape2D_fvm3a")
 
 [node name="Dvd-r" type="Sprite2D" parent="."]
 texture = ExtResource("1_tgel8")
+script = ExtResource("3_4pgi2")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
