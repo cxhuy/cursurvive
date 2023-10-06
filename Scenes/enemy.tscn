@@ -13,6 +13,7 @@ collision_layer = 2
 script = ExtResource("1_t7hd7")
 
 [node name="Enemy" type="Sprite2D" parent="."]
+rotation = 1.5708
 texture = ExtResource("1_iwp77")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
