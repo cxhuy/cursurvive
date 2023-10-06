@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhxlfphepr353"]
+
+[ext_resource type="Texture2D" uid="uid://b64ca7gro4q3r" path="res://Sprites/Attacks/DVD/DVD.png" id="1_kheyw"]
+
+[node name="DVD" type="Node2D"]
+
+[node name="Dvd" type="Sprite2D" parent="."]
+texture = ExtResource("1_kheyw")
