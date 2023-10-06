@@ -13,12 +13,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "scale", Vector2(5, 5), 1)	
 	
 	
 func _physics_process(delta):
 	if !fire:
-		self.scale *= 1.01
 		offset += 0.5
 		var mousePos = get_global_mouse_position()
 		var selfPos = self.global_position
