@@ -16,7 +16,7 @@ func _process(delta):
 	
 func addItem():
 	var instance = sceneInstance.instantiate()
-	instance.itemId = 0
+	instance.itemId = randi_range(0, 1)
 	instance.position = Vector2(randi_range(50, get_viewport_rect().size.x) - 50, randi_range(50, get_viewport_rect().size.y) - 50)
 	add_child(instance)
 	
