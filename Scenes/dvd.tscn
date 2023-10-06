@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bhxlfphepr353"]
+[gd_scene load_steps=3 format=3 uid="uid://bhxlfphepr353"]
 
 [ext_resource type="Texture2D" uid="uid://b64ca7gro4q3r" path="res://Sprites/Attacks/DVD/DVD.png" id="1_kheyw"]
+[ext_resource type="Script" path="res://Scripts/Attacks/DVD/dvd.gd" id="1_nrljw"]
 
 [node name="DVD" type="Node2D"]
+script = ExtResource("1_nrljw")
 
 [node name="Dvd" type="Sprite2D" parent="."]
 texture = ExtResource("1_kheyw")
