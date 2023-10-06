@@ -1,14 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://qi4p3dq65imb"]
+[gd_scene load_steps=5 format=3 uid="uid://qi4p3dq65imb"]
 
+[ext_resource type="Script" path="res://Scripts/Attacks/DVD/disc.gd" id="1_cmj6p"]
 [ext_resource type="Texture2D" uid="uid://dbuek3ldups5a" path="res://Sprites/Attacks/DVD/DVD-R.png" id="1_tgel8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oc8mp"]
+radius = 128.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fvm3a"]
 radius = 128.0
 
 [node name="Disc" type="RigidBody2D"]
+collision_layer = 16
+collision_mask = 4
 gravity_scale = 0.0
+script = ExtResource("1_cmj6p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_oc8mp")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_fvm3a")

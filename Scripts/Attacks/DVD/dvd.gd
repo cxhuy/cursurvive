@@ -14,7 +14,6 @@ func _ready():
 	var discInstance
 	for i in range(DISC_NUM):
 		discInstance = disc.instantiate()
-		discInstance.rotation_degrees = randi_range(0, 360)
 		discInstance.global_position = self.global_position	
 		get_node("../").add_child(discInstance)
 		await get_tree().create_timer(1).timeout
