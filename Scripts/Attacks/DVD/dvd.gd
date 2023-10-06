@@ -17,6 +17,12 @@ func _ready():
 		discInstance.global_position = self.global_position	
 		get_node("../").add_child(discInstance)
 		await get_tree().create_timer(1).timeout
+		
+	tween = get_tree().create_tween()
+	tween.tween_property(self, "scale", Vector2(0, 0), 0.1)
+	tween = get_tree().create_tween()
+	await get_tree().create_timer(0.1).timeout
+	queue_free()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
