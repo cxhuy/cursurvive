@@ -3,6 +3,7 @@ extends CharacterBody2D
 const SPEED = 10000
 
 var Player
+var canMove = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,11 +16,16 @@ func _process(delta):
 	
 	
 func _physics_process(delta):
-	look_at(Player.global_position)
-	velocity = Vector2(cos(rotation), sin(rotation)) * SPEED * delta
-	move_and_slide()
+	look_at(Player.global_position)	
+	if canMove:
+		velocity = Vector2(cos(rotation), sin(rotation)) * SPEED * delta
+		move_and_slide()
 	
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
 		Player.death()
+
+
+func _on_timer_timeout():
+	canMove = true
