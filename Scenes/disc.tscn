@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://qi4p3dq65imb"]
+
+[ext_resource type="Texture2D" uid="uid://dbuek3ldups5a" path="res://Sprites/Attacks/DVD/DVD-R.png" id="1_tgel8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fvm3a"]
+radius = 128.0
+
+[node name="Disc" type="RigidBody2D"]
+gravity_scale = 0.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_fvm3a")
+
+[node name="Dvd-r" type="Sprite2D" parent="."]
+texture = ExtResource("1_tgel8")
