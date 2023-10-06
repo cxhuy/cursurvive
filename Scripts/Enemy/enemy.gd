@@ -7,6 +7,9 @@ var canMove = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	self.scale = Vector2(0, 0)
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "scale", Vector2(1, 1), 0.3)	
 	Player = get_node("../../Player")
 
 
