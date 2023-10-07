@@ -11,7 +11,6 @@ func _ready():
 	clamp(self.global_position.x, texture_width / 2, viewport_x - texture_width / 2)
 	self.global_position.y = \
 	clamp(self.global_position.y, texture_height / 2, viewport_y - texture_height / 2)
-	print(get_node("MineSweeperSprite").texture.get_width())
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "scale", Vector2(1, 1), 0.2)	
 	await get_tree().create_timer(0.5).timeout

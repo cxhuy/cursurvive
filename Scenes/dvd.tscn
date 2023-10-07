@@ -7,5 +7,6 @@
 scale = Vector2(1e-05, 1e-05)
 script = ExtResource("1_nrljw")
 
-[node name="Dvd" type="Sprite2D" parent="."]
+[node name="DvdSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_kheyw")
