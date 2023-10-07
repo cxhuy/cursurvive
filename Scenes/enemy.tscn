@@ -18,11 +18,13 @@ texture = ExtResource("1_iwp77")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_olv7n")
+disabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_xnocv")
+disabled = true
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

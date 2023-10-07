@@ -32,3 +32,5 @@ func _on_area_2d_body_entered(body):
 
 func _on_timer_timeout():
 	canMove = true
+	get_node("Area2D/CollisionShape2D").disabled = false
+	get_node("CollisionShape2D").disabled = false
