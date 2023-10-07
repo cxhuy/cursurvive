@@ -12,6 +12,7 @@ func _ready():
 		tween.tween_property(self, "scale", Vector2(2, 2), 0.2)	
 		var texture = load(imagePath)
 		self.texture = texture
+	self.rotation = randi_range(0, 360)
 	rotationSpeed = randf_range(-0.5, 0.5)
 		
 		
