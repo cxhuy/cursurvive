@@ -9,6 +9,7 @@
 size = Vector2(26, 26)
 
 [node name="Enemy" type="CharacterBody2D"]
+z_index = 1
 collision_layer = 2
 script = ExtResource("1_t7hd7")
 
@@ -21,6 +22,7 @@ shape = SubResource("RectangleShape2D_olv7n")
 disabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
+z_index = 1
 collision_layer = 2
 collision_mask = 17
 
