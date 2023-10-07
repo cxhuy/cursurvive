@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bx27nhohdfw1i"]
+[gd_scene load_steps=3 format=3 uid="uid://bx27nhohdfw1i"]
 
+[ext_resource type="Script" path="res://Scripts/Attacks/Mine/mine.gd" id="1_b6p5d"]
 [ext_resource type="Texture2D" uid="uid://dyd7fj4c7o5uc" path="res://Sprites/Attacks/Mine/mine.png" id="1_l0ifc"]
 
 [node name="Mine" type="Node2D"]
+scale = Vector2(1e-05, 1e-05)
+script = ExtResource("1_b6p5d")
 
 [node name="Mine" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
