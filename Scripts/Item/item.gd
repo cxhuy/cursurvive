@@ -39,5 +39,7 @@ func _on_area_2d_body_entered(body):
 				var busyInstance = busy.instantiate()
 				busyInstance.global_position = self.global_position
 				Game.call_deferred("add_child", busyInstance)
+			3: # Mine attack
+				pass
 	Game.get_node("Items").addItem()
 	self.queue_free()

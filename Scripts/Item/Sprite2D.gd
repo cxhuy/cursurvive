@@ -1,6 +1,6 @@
 extends Sprite2D
 
-const itemNames = ["pointer","dvd", "busy"]
+const itemNames = ["pointer","dvd", "busy", "mine"]
 
 var imagePath
 var rotationSpeed
