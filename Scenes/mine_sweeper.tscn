@@ -7,5 +7,5 @@
 scale = Vector2(1e-05, 1e-05)
 script = ExtResource("1_dldiu")
 
-[node name="Minesweeper" type="Sprite2D" parent="."]
+[node name="MineSweeperSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_p5xbp")
