@@ -7,7 +7,6 @@ var discSize = 0.2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.scale = Vector2(0.5, 0.5)
 	get_node("CollisionShape2D").scale = Vector2(discSize, discSize)
 	get_node("Area2D").scale = Vector2(discSize, discSize)
 	get_node("Dvd-r").scale = Vector2(discSize, discSize)

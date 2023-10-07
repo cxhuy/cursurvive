@@ -32,9 +32,13 @@ func _physics_process(delta):
 	if chase and enemy_to_chase != null:
 		enemyPos = enemy_to_chase.global_position
 		selfPos = self.global_position
-		self.velocity = (enemyPos - selfPos) * SPEED * delta	
+		self.velocity = (enemyPos - selfPos) * SPEED * delta
 		move_and_slide()
 		
 		
 func _on_attack_body_body_entered(body):
 	body.queue_free()
+	
+
+func _on_timer_timeout():
+	self.queue_free()
