@@ -5,6 +5,7 @@ var Player
 var Game
 var pointer = preload("res://Scenes/pointer.tscn")
 var dvd = preload("res://Scenes/dvd.tscn")
+var busy = preload("res://Scenes/busy.tscn")
 var velocity = Vector2(randi_range(-50, 50), randi_range(-50, 50))
 
 # Called when the node enters the scene tree for the first time.
@@ -35,6 +36,8 @@ func _on_area_2d_body_entered(body):
 				dvdInstance.global_position = self.global_position
 				Game.add_child(dvdInstance)				
 			2: # Busy attack
-				pass
+				var busyInstance = busy.instantiate()
+				busyInstance.global_position = self.global_position
+				Game.add_child(busyInstance)
 	Game.get_node("Items").addItem()
 	self.queue_free()

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cabf3pw4im4si"]
+
+[ext_resource type="Texture2D" uid="uid://bcql4b5qgpuss" path="res://Sprites/Attacks/Busy/busy.png" id="1_157hv"]
+[ext_resource type="Script" path="res://Scripts/Attacks/Busy/BusySprite.gd" id="2_sor81"]
+
+[node name="Busy" type="Area2D"]
+
+[node name="BusySprite" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_157hv")
+script = ExtResource("2_sor81")
