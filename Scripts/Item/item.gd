@@ -6,6 +6,7 @@ var Game
 var pointer = preload("res://Scenes/pointer.tscn")
 var dvd = preload("res://Scenes/dvd.tscn")
 var busy = preload("res://Scenes/busy.tscn")
+var mine = preload("res://Scenes/mine_sweeper.tscn")
 var velocity = Vector2(randi_range(-50, 50), randi_range(-50, 50))
 
 # Called when the node enters the scene tree for the first time.
@@ -40,6 +41,8 @@ func _on_area_2d_body_entered(body):
 				busyInstance.global_position = self.global_position
 				Game.call_deferred("add_child", busyInstance)
 			3: # Mine attack
-				pass
+				var mineInstance = mine.instantiate()
+				mineInstance.global_position = self.global_position
+				Game.call_deferred("add_child", mineInstance)
 	Game.get_node("Items").addItem()
 	self.queue_free()

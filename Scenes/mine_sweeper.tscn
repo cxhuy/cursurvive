@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgo04hvsuk6wh"]
+
+[ext_resource type="Texture2D" uid="uid://k6imrrkk1yi3" path="res://Sprites/Attacks/Mine/minesweeper.png" id="1_p5xbp"]
+
+[node name="MineSweeper" type="Node2D"]
+
+[node name="Minesweeper" type="Sprite2D" parent="."]
+texture = ExtResource("1_p5xbp")
