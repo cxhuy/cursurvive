@@ -1,12 +1,37 @@
-[gd_scene load_steps=3 format=3 uid="uid://bx27nhohdfw1i"]
+[gd_scene load_steps=5 format=3 uid="uid://bx27nhohdfw1i"]
 
 [ext_resource type="Script" path="res://Scripts/Attacks/Mine/mine.gd" id="1_b6p5d"]
 [ext_resource type="Texture2D" uid="uid://dyd7fj4c7o5uc" path="res://Sprites/Attacks/Mine/mine.png" id="1_l0ifc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ina00"]
+radius = 32.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jo3ws"]
+radius = 800.0
 
 [node name="Mine" type="Node2D"]
 scale = Vector2(1e-05, 1e-05)
 script = ExtResource("1_b6p5d")
 
-[node name="Mine" type="Sprite2D" parent="."]
+[node name="MineSprite" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_l0ifc")
+
+[node name="AttackRange" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
+shape = SubResource("CircleShape2D_ina00")
+
+[node name="AttackBody" type="Area2D" parent="."]
+scale = Vector2(0.2, 0.2)
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBody"]
+scale = Vector2(1e-05, 1e-05)
+shape = SubResource("CircleShape2D_jo3ws")
+
+[connection signal="body_entered" from="AttackRange" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="AttackBody" to="." method="_on_attack_body_body_entered"]
