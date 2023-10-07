@@ -10,6 +10,7 @@ size = Vector2(26, 26)
 
 [node name="Enemy" type="CharacterBody2D"]
 z_index = 1
+scale = Vector2(1e-05, 1e-05)
 collision_layer = 2
 script = ExtResource("1_t7hd7")
 
