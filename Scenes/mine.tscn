@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx27nhohdfw1i"]
+
+[ext_resource type="Texture2D" uid="uid://dyd7fj4c7o5uc" path="res://Sprites/Attacks/Mine/mine.png" id="1_l0ifc"]
+
+[node name="Mine" type="Node2D"]
+
+[node name="Mine" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_l0ifc")
