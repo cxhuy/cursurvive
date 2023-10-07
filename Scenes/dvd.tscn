@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/Attacks/DVD/dvd.gd" id="1_nrljw"]
 
 [node name="DVD" type="Node2D"]
+scale = Vector2(1e-05, 1e-05)
 script = ExtResource("1_nrljw")
 
 [node name="Dvd" type="Sprite2D" parent="."]
