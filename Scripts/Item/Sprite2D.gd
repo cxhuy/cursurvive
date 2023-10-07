@@ -1,12 +1,12 @@
 extends Sprite2D
 
-const itemNames = ["pointer_item","dvd_item"]
+const itemNames = ["pointer","dvd", "busy"]
 
 var imagePath
 var rotationSpeed
 
 func _ready():
-	imagePath = "res://Sprites/Items/" + itemNames[get_node("..").itemId] + ".png"
+	imagePath = "res://Sprites/Items/" + itemNames[get_node("..").itemId] + "_item.png"
 	if imagePath:
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "scale", Vector2(2, 2), 0.2)	

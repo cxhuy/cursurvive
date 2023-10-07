@@ -34,5 +34,7 @@ func _on_area_2d_body_entered(body):
 				var dvdInstance = dvd.instantiate()
 				dvdInstance.global_position = self.global_position
 				Game.add_child(dvdInstance)				
+			2: # Busy attack
+				pass
 	Game.get_node("Items").addItem()
 	self.queue_free()
