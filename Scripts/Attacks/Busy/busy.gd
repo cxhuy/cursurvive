@@ -41,4 +41,7 @@ func _on_attack_body_body_entered(body):
 	
 
 func _on_timer_timeout():
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "scale", Vector2(0, 0), 0.1)
+	await get_tree().create_timer(0.1).timeout
 	self.queue_free()
