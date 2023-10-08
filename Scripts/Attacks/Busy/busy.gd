@@ -11,7 +11,7 @@ func _process(delta):
 
 	if !chase or enemy_to_chase == null:
 		if enemies_in_range.size() != 0:
-			enemy_to_chase = enemies_in_range[randi_range(0, enemies_in_range.size() - 1)]
+			enemy_to_chase = find_closest_enemy(enemies_in_range)
 			chase = true
 			get_node("AttackRange/CollisionShape2D").shape.radius = 0.01
 			
@@ -23,6 +23,16 @@ func _physics_process(delta):
 	if chase and enemy_to_chase != null:
 		self.velocity = (enemy_to_chase.global_position - self.global_position) * SPEED * delta
 		move_and_slide()
+		
+func find_closest_enemy(enemies_in_range):
+	var closest_enemy = enemies_in_range[0]
+	var closest_dist = self.global_position.distance_squared_to(closest_enemy.global_position)
+	
+	for enemy in enemies_in_range:
+		if self.global_position.distance_squared_to(enemy.global_position) < closest_dist:
+			closest_enemy = enemy
+			
+	return closest_enemy
 		
 		
 func _on_attack_body_body_entered(body):
