@@ -4,8 +4,9 @@ const DISC_NUM = 2
 
 var disc = preload("res://Scenes/disc.tscn")
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
+	# Prevents DVD from going outside the screen
 	var viewport_x = get_viewport_rect().size.x
 	var viewport_y = get_viewport_rect().size.y
 	var texture_width = get_node("DvdSprite").texture.get_width() * get_node("DvdSprite").scale.x
@@ -14,7 +15,8 @@ func _ready():
 	clamp(self.global_position.x, texture_width / 2, viewport_x - texture_width / 2)
 	self.global_position.y = \
 	clamp(self.global_position.y, texture_height / 2, viewport_y - texture_height / 2)
-	var tween = get_tree().create_tween()
+	
+	var tween = create_tween()
 	tween.tween_property(self, "scale", Vector2(1, 1), 0.2)	
 	await get_tree().create_timer(0.5).timeout
 	
@@ -27,11 +29,5 @@ func _ready():
 		
 	tween = get_tree().create_tween()
 	tween.tween_property(self, "scale", Vector2(0, 0), 0.1)
-	tween = get_tree().create_tween()
 	await get_tree().create_timer(0.1).timeout
-	queue_free()
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+	self.queue_free()
