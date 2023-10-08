@@ -1,6 +1,6 @@
 extends Node2D
 
-const MINE_NUM = 4
+const MINE_NUM = 3
 
 var mine = preload("res://Scenes/mine.tscn")
 
@@ -28,7 +28,7 @@ func _ready():
 		mineSpawnPos_y = randi_range(0 + 50, get_viewport_rect().size.y - 50)
 		mineInstance.global_position = Vector2(mineSpawnPos_x, mineSpawnPos_y)
 		get_node("../").add_child(mineInstance)
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(0.3).timeout
 		
 	tween = get_tree().create_tween()
 	tween.tween_property(self, "scale", Vector2(0, 0), 0.1)
