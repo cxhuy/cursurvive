@@ -1,5 +1,7 @@
 extends Node2D
 
+const EXPLOSION_DURATION = 2
+
 var canExplode = false
 
 
@@ -17,7 +19,7 @@ func _on_area_2d_body_entered(body):
 		
 		var tween = create_tween()
 		tween.tween_property(get_node("AttackBody/CollisionShape2D"), "scale", Vector2(1, 1), 0.2)
-		await get_tree().create_timer(2).timeout
+		await get_tree().create_timer(EXPLOSION_DURATION).timeout
 		var tween2 = get_tree().create_tween()
 		tween2.tween_property(get_node("AttackBody/CollisionShape2D"), "scale", Vector2(0, 0), 0.2)
 		await get_tree().create_timer(0.2).timeout		
