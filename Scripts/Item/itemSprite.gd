@@ -6,6 +6,7 @@ const itemNames = ["pointer","dvd", "busy", "mine"]
 
 var rotationSpeed = randf_range(-0.5, 0.5)
 
+
 func _ready(): 
 	if imagePath:
 		var tween = create_tween()
