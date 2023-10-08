@@ -3,16 +3,12 @@ extends Node2D
 const SPAWN_RADIUS = 800 # enemies will be spawned within this distance from the player
 const SPAWN_LIMIT = 300 # enemies will be spawned outside this distance from the player
 
+@onready var Player = get_node("../Player")
 var enemy = preload("res://Scenes/enemy.tscn")
-var Player
-
-func _ready():
-	Player = get_node("../Player")
 
 
 func _on_timer_timeout():
 	var spawnedEnemy = enemy.instantiate()
-	
 	var spawnPos = Vector2.ZERO
 	var validSpawn = false
 	
