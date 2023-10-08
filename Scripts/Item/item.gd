@@ -1,48 +1,43 @@
 extends RigidBody2D
 
-var itemId
-var Player
-var Game
+@onready var Game = get_node("../..")
+
 var pointer = preload("res://Scenes/pointer.tscn")
 var dvd = preload("res://Scenes/dvd.tscn")
 var busy = preload("res://Scenes/busy.tscn")
 var mine = preload("res://Scenes/mine_sweeper.tscn")
+
+var itemId
 var velocity = Vector2(randi_range(-50, 50), randi_range(-50, 50))
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-#	Player = get_node("../../Player")
-	Game = get_node("../..")
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 
 func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta)
+	
 	if collision:
 		velocity = velocity.bounce(collision.get_normal())
 		
 
 func _on_area_2d_body_entered(body):
+	var itemToUse
+	
 	if body.name == "Player":
 		match itemId:
 			0: # Pointer attack
-				var pointerInstance = pointer.instantiate()
-				Game.call_deferred("add_child", pointerInstance)
+				itemToUse = pointer.instantiate()
+				
 			1: # Dvd attack
-				var dvdInstance = dvd.instantiate()
-				dvdInstance.global_position = self.global_position
-				Game.call_deferred("add_child", dvdInstance)			
+				itemToUse = dvd.instantiate()
+				itemToUse.global_position = self.global_position	
+					
 			2: # Busy attack
-				var busyInstance = busy.instantiate()
-				busyInstance.global_position = self.global_position
-				Game.call_deferred("add_child", busyInstance)
+				itemToUse = busy.instantiate()
+				itemToUse.global_position = self.global_position
+				
 			3: # Mine attack
-				var mineInstance = mine.instantiate()
-				mineInstance.global_position = self.global_position
-				Game.call_deferred("add_child", mineInstance)
+				itemToUse = mine.instantiate()
+				itemToUse.global_position = self.global_position
+	
+	Game.call_deferred("add_child", itemToUse)
 	Game.get_node("Items").addItem()
 	self.queue_free()
