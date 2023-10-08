@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bxb1i41w78dog"]
 
-[ext_resource type="Script" path="res://Scripts/Item/Sprite2D.gd" id="1_l80c8"]
 [ext_resource type="Script" path="res://Scripts/Item/item.gd" id="1_qt3c2"]
+[ext_resource type="Script" path="res://Scripts/Item/itemSprite.gd" id="2_yjsa5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8gdg7"]
 radius = 28.0
@@ -19,8 +19,8 @@ script = ExtResource("1_qt3c2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_8gdg7")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-script = ExtResource("1_l80c8")
+[node name="ItemSprite" type="Sprite2D" parent="."]
+script = ExtResource("2_yjsa5")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 8
