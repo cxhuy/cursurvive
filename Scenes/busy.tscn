@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bcql4b5qgpuss" path="res://Sprites/Attacks/Busy/busy.png" id="1_157hv"]
 [ext_resource type="Script" path="res://Scripts/Attacks/Busy/busy.gd" id="1_ngthc"]
-[ext_resource type="Script" path="res://Scripts/Attacks/Busy/BusySprite.gd" id="2_sor81"]
+[ext_resource type="Script" path="res://Scripts/Attacks/Busy/busySprite.gd" id="3_s7v1u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lphpc"]
 radius = 0.01
@@ -17,7 +17,7 @@ script = ExtResource("1_ngthc")
 [node name="BusySprite" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
 texture = ExtResource("1_157hv")
-script = ExtResource("2_sor81")
+script = ExtResource("3_s7v1u")
 
 [node name="AttackRange" type="Area2D" parent="."]
 scale = Vector2(2, 2)
