@@ -2,7 +2,7 @@ extends Node2D
 
 const DISC_NUM = 2
 
-var disc = preload("res://Scenes/disc.tscn")
+var disc = preload("res://Scenes/Attacks/disc.tscn")
 
 
 func _ready():

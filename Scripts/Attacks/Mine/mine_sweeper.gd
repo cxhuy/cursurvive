@@ -2,7 +2,7 @@ extends Node2D
 
 const MINE_NUM = 3
 
-var mine = preload("res://Scenes/mine.tscn")
+var mine = preload("res://Scenes/Attacks/mine.tscn")
 
 func _ready():
 	# Prevents MineSweeper from going outside the screen

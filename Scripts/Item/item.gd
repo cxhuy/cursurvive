@@ -2,10 +2,10 @@ extends RigidBody2D
 
 @onready var Game = get_node("../..")
 
-var pointer = preload("res://Scenes/pointer.tscn")
-var dvd = preload("res://Scenes/dvd.tscn")
-var busy = preload("res://Scenes/busy.tscn")
-var mine = preload("res://Scenes/mine_sweeper.tscn")
+var pointer = preload("res://Scenes/Attacks/pointer.tscn")
+var dvd = preload("res://Scenes/Attacks/dvd.tscn")
+var busy = preload("res://Scenes/Attacks/busy.tscn")
+var mine = preload("res://Scenes/Attacks/mine_sweeper.tscn")
 
 var itemId
 var velocity = Vector2(randi_range(-50, 50), randi_range(-50, 50))

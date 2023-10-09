@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://cabf3pw4im4si"]
 
-[ext_resource type="Texture2D" uid="uid://bcql4b5qgpuss" path="res://Sprites/Attacks/Busy/busy.png" id="1_157hv"]
-[ext_resource type="Script" path="res://Scripts/Attacks/Busy/busy.gd" id="1_ngthc"]
-[ext_resource type="Script" path="res://Scripts/Attacks/Busy/busySprite.gd" id="3_s7v1u"]
+[ext_resource type="Script" path="res://Scripts/Attacks/Busy/busy.gd" id="1_55dbq"]
+[ext_resource type="Texture2D" uid="uid://bcql4b5qgpuss" path="res://Sprites/Attacks/Busy/busy.png" id="2_fu3iq"]
+[ext_resource type="Script" path="res://Scripts/Attacks/Busy/busySprite.gd" id="3_6c1df"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lphpc"]
 radius = 0.01
@@ -12,12 +12,12 @@ radius = 24.0
 
 [node name="Busy" type="CharacterBody2D"]
 z_index = 1
-script = ExtResource("1_ngthc")
+script = ExtResource("1_55dbq")
 
 [node name="BusySprite" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
-texture = ExtResource("1_157hv")
-script = ExtResource("3_s7v1u")
+texture = ExtResource("2_fu3iq")
+script = ExtResource("3_6c1df")
 
 [node name="AttackRange" type="Area2D" parent="."]
 scale = Vector2(2, 2)
