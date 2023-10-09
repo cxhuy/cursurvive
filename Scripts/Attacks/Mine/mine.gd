@@ -3,6 +3,7 @@ extends Node2D
 const EXPLOSION_DURATION = 2
 
 var canExplode = false
+var exploding = false
 
 
 func _ready():
@@ -14,6 +15,7 @@ func _ready():
 
 func _on_area_2d_body_entered(body):
 	if canExplode:
+		exploding = true
 		get_node("AttackRange").queue_free()
 		get_node("MineSprite").queue_free()
 		
@@ -31,4 +33,5 @@ func _on_attack_body_body_entered(body):
 
 
 func _on_duration_timeout():
-	self.queue_free()
+	if !exploding:	
+		self.queue_free()
