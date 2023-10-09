@@ -81,4 +81,5 @@ func spawn_enemy_pattern():
 				enemySpawnPos.y = \
 					circleCenterPos.y + cos(deg_to_rad(i * 360 / enemyCount)) * circleRadius
 				enemyToSpawn.global_position = enemySpawnPos
+				enemyToSpawn.get_node("MoveDelay").wait_time = 2
 				add_child(enemyToSpawn)
