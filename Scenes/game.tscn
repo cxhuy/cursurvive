@@ -49,6 +49,7 @@ shape = SubResource("RectangleShape2D_2jwsb")
 script = ExtResource("4_noyw3")
 
 [node name="Timer" type="Timer" parent="Enemies"]
+process_callback = 0
 autostart = true
 
 [node name="Items" type="Node2D" parent="."]

@@ -37,6 +37,7 @@ shape = SubResource("CircleShape2D_jo3ws")
 texture = ExtResource("3_k4prd")
 
 [node name="Duration" type="Timer" parent="."]
+process_callback = 0
 wait_time = 8.0
 autostart = true
 

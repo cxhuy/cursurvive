@@ -32,6 +32,7 @@ texture = ExtResource("1_tgel8")
 script = ExtResource("3_b1alp")
 
 [node name="Duration" type="Timer" parent="."]
+process_callback = 0
 wait_time = 3.0
 autostart = true
 
