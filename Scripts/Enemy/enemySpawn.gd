@@ -52,8 +52,9 @@ func spawn_enemy_pattern():
 			while !validSpawn:
 				circleCenterPos.x = randi_range(0 + 50, get_viewport_rect().size.x - 50)
 				circleCenterPos.y = randi_range(0 + 50, get_viewport_rect().size.y - 50)
-				if SPAWN_LIMIT < circleCenterPos.distance_to(Player.global_position) and \
-				circleCenterPos.distance_to(Player.global_position) < SPAWN_RADIUS:
+				
+				if SPAWN_LIMIT + circleRadius < circleCenterPos.distance_to(Player.global_position) \
+				and circleCenterPos.distance_to(Player.global_position) < SPAWN_RADIUS + circleRadius:
 					validSpawn = true
 					
 			for i in range(enemyCount):
