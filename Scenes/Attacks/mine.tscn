@@ -36,5 +36,10 @@ shape = SubResource("CircleShape2D_jo3ws")
 [node name="Sprite2D" type="Sprite2D" parent="AttackBody/CollisionShape2D"]
 texture = ExtResource("3_k4prd")
 
+[node name="Duration" type="Timer" parent="."]
+wait_time = 8.0
+autostart = true
+
 [connection signal="body_entered" from="AttackRange" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="AttackBody" to="." method="_on_attack_body_body_entered"]
+[connection signal="timeout" from="Duration" to="." method="_on_duration_timeout"]
