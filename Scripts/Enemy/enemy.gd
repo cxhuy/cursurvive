@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 10000
+var SPEED = 10000
 
 @onready var Player = get_node("../../Player")
 var canMove = false
