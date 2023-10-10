@@ -44,18 +44,10 @@ func spawn_enemy_pattern():
 			
 			var enemyCount = enemyCountVars[randi() % enemyCountVars.size()]
 			var circleRadius = enemyCount * 5
-			var circleCenterPos = Vector2.ZERO
+			var circleCenterPos = findRandValidSpawn(circleRadius)
 			var enemySpawnPos = Vector2.ZERO
 			var validSpawn = false
 			var enemyToSpawn
-			
-			while !validSpawn:
-				circleCenterPos.x = randi_range(0 + 50, get_viewport_rect().size.x - 50)
-				circleCenterPos.y = randi_range(0 + 50, get_viewport_rect().size.y - 50)
-				
-				if SPAWN_LIMIT + circleRadius < circleCenterPos.distance_to(Player.global_position) \
-				and circleCenterPos.distance_to(Player.global_position) < SPAWN_RADIUS + circleRadius:
-					validSpawn = true
 					
 			for i in range(enemyCount):
 				enemyToSpawn = enemy.instantiate()
@@ -85,3 +77,14 @@ func spawn_enemy_pattern():
 				enemyToSpawn.SPEED = 8000
 				enemyToSpawn.get_node("MoveDelay").wait_time = 2
 				add_child(enemyToSpawn)
+			
+			
+func findRandValidSpawn(additionalRange = 0):
+	var validSpawnPos = Vector2.ZERO
+	while true:
+		validSpawnPos.x = randi_range(0 + 50, get_viewport_rect().size.x - 50)
+		validSpawnPos.y = randi_range(0 + 50, get_viewport_rect().size.y - 50)
+		
+		if SPAWN_LIMIT + additionalRange < validSpawnPos.distance_to(Player.global_position) \
+		and validSpawnPos.distance_to(Player.global_position) < SPAWN_RADIUS + additionalRange:
+			return validSpawnPos
