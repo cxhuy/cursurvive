@@ -4,11 +4,14 @@ var SPEED = 10000
 
 @onready var Player = get_node("../../Player")
 var canMove = false
+var canKill = false
 
 
 func _ready():
 	var tween = create_tween()
 	tween.tween_property(self, "scale", Vector2(1, 1), 0.3)	
+	await get_tree().create_timer(1).timeout
+	canKill = true
 	
 	
 func _physics_process(delta):
@@ -20,7 +23,7 @@ func _physics_process(delta):
 	
 
 func _on_area_2d_body_entered(body):
-	if body.name == "Player": 
+	if body.name == "Player" and canKill: 
 		Player.death()
 
 
