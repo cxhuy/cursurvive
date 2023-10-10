@@ -27,5 +27,3 @@ func _on_area_2d_body_entered(body):
 func _on_timer_timeout():
 	# Enemy does not move or interact until timer is triggered
 	canMove = true
-	get_node("Area2D/CollisionShape2D").disabled = false
-	get_node("CollisionShape2D").disabled = false
