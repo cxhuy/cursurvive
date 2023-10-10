@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://c4ivcn2gw3idh"]
+[gd_scene load_steps=10 format=3 uid="uid://c4ivcn2gw3idh"]
 
+[ext_resource type="Script" path="res://Scripts/game.gd" id="1_2wx2f"]
 [ext_resource type="Texture2D" uid="uid://dn4iadu6sqrwe" path="res://background.jpeg" id="1_lb466"]
 [ext_resource type="PackedScene" uid="uid://c2edtnna75yxj" path="res://Scenes/player.tscn" id="2_td4pr"]
 [ext_resource type="Script" path="res://Scripts/Item/items.gd" id="4_7sfbm"]
@@ -18,6 +19,7 @@ size = Vector2(1984, 32)
 size = Vector2(32, 1200)
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_2wx2f")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(960, 600)
