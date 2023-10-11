@@ -150,20 +150,33 @@ func spawn_enemy_pattern():
 					add_child(enemyToSpawn)
 					
 		4: # Stream of enemies towards players
-			const enemyCount = 20
+			const streamCount = 40
+			const turretCount = 30
+			const turretRadius = 40
 
 			var streamCenter = findRandValidSpawn()
 			var enemyToSpawn
+			
+			for i in range(turretCount):
+				enemyToSpawn = enemy.instantiate()
+				enemyToSpawn.global_position = Vector2( \
+				streamCenter.x + sin(deg_to_rad(i * 360 / turretCount)) * turretRadius, \
+				streamCenter.y + cos(deg_to_rad(i * 360 / turretCount)) * turretRadius)
+				enemyToSpawn.SPEED = 8000
+				enemyToSpawn.get_node("MoveDelay").wait_time = 4
+				add_child(enemyToSpawn)
+				
+			await get_tree().create_timer(1).timeout
 
-			for i in range(enemyCount):
+			for i in range(streamCount):
 				enemyToSpawn = enemy.instantiate()
 				enemyToSpawn.global_position = streamCenter
 				enemyToSpawn.followPlayer = false
-				enemyToSpawn.SPEED = 25000		
-				enemyToSpawn.get_node("MoveDelay").wait_time = 0.1							
+				enemyToSpawn.SPEED = 25000
+				enemyToSpawn.get_node("MoveDelay").wait_time = 0.1
 				add_child(enemyToSpawn)
-				enemyToSpawn.look_at(Player.global_position)	
-				await get_tree().create_timer(0.1).timeout
+				enemyToSpawn.look_at(Player.global_position)
+				await get_tree().create_timer(0.05).timeout
 				
 			
 func findRandValidSpawn(additionalRange = 0):
