@@ -36,7 +36,7 @@ func _on_timer_timeout():
 		
 
 func spawn_enemy_pattern():
-	var patternId = randi_range(0, 2)
+	var patternId = randi_range(0, 3)
 	
 	match patternId:
 		0: # Circle of enemies
@@ -107,7 +107,48 @@ func spawn_enemy_pattern():
 					
 			addLine.call(arrowAngle)
 			addLine.call(-arrowAngle)
-				
+			
+		3: # Walls
+			const spawnGap = 80
+			var wallPattern = randi_range(0, 2)
+			var enemyToSpawn
+			
+			if wallPattern == 0 or wallPattern == 2: # Up, Down 
+				for i in range(get_viewport_rect().size.x / spawnGap):
+					enemyToSpawn = enemy.instantiate()
+					enemyToSpawn.global_position = Vector2(i * spawnGap + 20, 20)
+					enemyToSpawn.rotation_degrees = 90
+					enemyToSpawn.followPlayer = false
+					enemyToSpawn.SPEED = 5000
+					enemyToSpawn.get_node("MoveDelay").wait_time = 1.5	
+					add_child(enemyToSpawn)
+					enemyToSpawn = enemy.instantiate()
+					enemyToSpawn.global_position = Vector2(i * spawnGap + 20 + spawnGap / 2, \
+					get_viewport_rect().size.y - 20)
+					enemyToSpawn.rotation_degrees = -90
+					enemyToSpawn.followPlayer = false
+					enemyToSpawn.SPEED = 5000
+					enemyToSpawn.get_node("MoveDelay").wait_time = 1.5	
+					add_child(enemyToSpawn)
+					
+			if wallPattern == 1 or wallPattern == 2: # Left, Right 
+				for i in range(get_viewport_rect().size.y / spawnGap):
+					enemyToSpawn = enemy.instantiate()
+					enemyToSpawn.global_position = Vector2(20, i * spawnGap + 20)
+					enemyToSpawn.rotation_degrees = 0
+					enemyToSpawn.followPlayer = false
+					enemyToSpawn.SPEED = 5000
+					enemyToSpawn.get_node("MoveDelay").wait_time = 1.5	
+					add_child(enemyToSpawn)
+					enemyToSpawn = enemy.instantiate()
+					enemyToSpawn.global_position = Vector2(get_viewport_rect().size.x - 20, \
+					i * spawnGap + 20 + spawnGap / 2)
+					enemyToSpawn.rotation_degrees = 180
+					enemyToSpawn.followPlayer = false
+					enemyToSpawn.SPEED = 5000
+					enemyToSpawn.get_node("MoveDelay").wait_time = 1.5	
+					add_child(enemyToSpawn)
+			
 			
 func findRandValidSpawn(additionalRange = 0):
 	var validSpawnPos = Vector2.ZERO
