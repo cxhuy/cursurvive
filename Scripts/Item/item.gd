@@ -6,6 +6,7 @@ var pointer = preload("res://Scenes/Attacks/pointer.tscn")
 var dvd = preload("res://Scenes/Attacks/dvd.tscn")
 var busy = preload("res://Scenes/Attacks/busy.tscn")
 var mine = preload("res://Scenes/Attacks/mine_sweeper.tscn")
+var trash = preload("res://Scenes/Attacks/trash.tscn")
 
 var itemId
 var velocity = Vector2(randi_range(-50, 50), randi_range(-50, 50))
@@ -36,6 +37,10 @@ func _on_area_2d_body_entered(body):
 				
 			3: # Mine attack
 				itemToUse = mine.instantiate()
+				itemToUse.global_position = self.global_position
+				
+			4: # Trash attack
+				itemToUse = trash.instantiate()
 				itemToUse.global_position = self.global_position
 	
 	Game.call_deferred("add_child", itemToUse)
