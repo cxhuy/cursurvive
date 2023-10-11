@@ -100,6 +100,9 @@ func spawn_enemy_pattern():
 					enemySpawnPos.y += sin(deg_to_rad(enemyRotation + angle + 180)) * 30 * i
 					enemyToSpawn.global_position = enemySpawnPos
 					enemyToSpawn.rotation_degrees = enemyRotation
+					enemyToSpawn.followPlayer = false
+					enemyToSpawn.SPEED = 50000
+					enemyToSpawn.get_node("MoveDelay").wait_time = 1.2					
 					add_child(enemyToSpawn)
 					
 			addLine.call(arrowAngle)
