@@ -15,3 +15,7 @@ func _process(delta):
 		enemy = enemy.get_node("../")
 		enemy.global_position -= \
 		(enemy.global_position - self.global_position).normalized() * delta * power
+
+
+func _on_attack_range_body_entered(body):
+	body.queue_free()
