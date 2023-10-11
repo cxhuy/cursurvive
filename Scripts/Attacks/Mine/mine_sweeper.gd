@@ -25,9 +25,7 @@ func _ready():
 	
 	for i in range(MINE_NUM):
 		mineInstance = mine.instantiate()
-		mineSpawnPos_x = randi_range(0 + 50, get_viewport_rect().size.x - 50)
-		mineSpawnPos_y = randi_range(0 + 50, get_viewport_rect().size.y - 50)
-		mineInstance.global_position = Vector2(mineSpawnPos_x, mineSpawnPos_y)
+		mineInstance.global_position = self.global_position
 		get_node("../").add_child(mineInstance)
 		await get_tree().create_timer(0.3).timeout
 		

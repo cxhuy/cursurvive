@@ -7,7 +7,11 @@ var exploding = false
 
 
 func _ready():
-	var tween = create_tween()
+	var tween = create_tween().set_trans(Tween.TRANS_EXPO)
+	var mineSpawnPos_x = randi_range(0 + 50, get_viewport_rect().size.x - 50)
+	var mineSpawnPos_y = randi_range(0 + 50, get_viewport_rect().size.y - 50)
+	tween.tween_property(self, "global_position", Vector2(mineSpawnPos_x, mineSpawnPos_y), 0.5)
+	tween = create_tween().set_trans(Tween.TRANS_EXPO)
 	tween.tween_property(self, "scale", Vector2(1, 1), 0.2)	
 	await get_tree().create_timer(0.5).timeout
 	canExplode = true
