@@ -10,6 +10,7 @@ radius = 250.0
 radius = 20.0
 
 [node name="Trash" type="Node2D"]
+scale = Vector2(1e-05, 1e-05)
 script = ExtResource("1_n5q11")
 
 [node name="TrashSprite" type="Sprite2D" parent="."]
@@ -21,6 +22,7 @@ collision_layer = 16
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GravityRange"]
+scale = Vector2(1e-05, 1e-05)
 shape = SubResource("CircleShape2D_hcv7l")
 
 [node name="AttackRange" type="Area2D" parent="."]
