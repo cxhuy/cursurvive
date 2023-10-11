@@ -27,6 +27,11 @@ func _ready():
 		mineInstance = mine.instantiate()
 		mineInstance.global_position = self.global_position
 		get_node("../").add_child(mineInstance)
+		tween = create_tween()
+		tween.tween_property(self, "scale", Vector2(1.1, 1.1), 0.1)
+		await get_tree().create_timer(0.1).timeout
+		tween = create_tween()
+		tween.tween_property(self, "scale", Vector2(1, 1), 0.1)
 		await get_tree().create_timer(0.3).timeout
 		
 	tween = create_tween()
