@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dobaxocx5rjjb"]
+[gd_scene load_steps=6 format=3 uid="uid://dobaxocx5rjjb"]
 
 [ext_resource type="Texture2D" uid="uid://cnfvubime54g8" path="res://Sprites/Attacks/Trash/empty.png" id="1_b7hc5"]
 [ext_resource type="Script" path="res://Scripts/Attacks/Trash/trash.gd" id="1_n5q11"]
+[ext_resource type="Texture2D" uid="uid://ji5c46f68382" path="res://Sprites/Attacks/Trash/gravityzone.png" id="2_e3ne3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hcv7l"]
 radius = 250.0
@@ -13,17 +14,17 @@ radius = 20.0
 scale = Vector2(1e-05, 1e-05)
 script = ExtResource("1_n5q11")
 
-[node name="TrashSprite" type="Sprite2D" parent="."]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_b7hc5")
-
 [node name="GravityRange" type="Area2D" parent="."]
+scale = Vector2(1e-05, 1e-05)
 collision_layer = 16
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GravityRange"]
-scale = Vector2(1e-05, 1e-05)
 shape = SubResource("CircleShape2D_hcv7l")
+
+[node name="Gravityzone" type="Sprite2D" parent="GravityRange"]
+scale = Vector2(1.65, 1.65)
+texture = ExtResource("2_e3ne3")
 
 [node name="AttackRange" type="Area2D" parent="."]
 collision_layer = 16
@@ -31,5 +32,9 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
 shape = SubResource("CircleShape2D_hgedj")
+
+[node name="TrashSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_b7hc5")
 
 [connection signal="body_entered" from="AttackRange" to="." method="_on_attack_range_body_entered"]
