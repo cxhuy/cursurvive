@@ -36,7 +36,7 @@ func _on_timer_timeout():
 		
 
 func spawn_enemy_pattern():
-	var patternId = randi_range(0, 1)
+	var patternId = randi_range(0, 2)
 	
 	match patternId:
 		0: # Circle of enemies
@@ -78,6 +78,33 @@ func spawn_enemy_pattern():
 				enemyToSpawn.get_node("MoveDelay").wait_time = 2
 				add_child(enemyToSpawn)
 			
+		2: # Arrow that flies towards player:
+			const enemyCount = 7
+			const arrowAngle = 20
+			
+			var arrowPoint = findRandValidSpawn()
+			var enemySpawnPos = arrowPoint		
+			var enemyRotation	
+			var enemyToSpawn = enemy.instantiate()
+			
+			enemyToSpawn.global_position = enemySpawnPos	
+			add_child(enemyToSpawn)
+			enemyToSpawn.look_at(Player.global_position)	
+			enemyRotation = enemyToSpawn.rotation_degrees														
+				
+			var addLine = func(angle):
+				for i in range(enemyCount):
+					enemyToSpawn = enemy.instantiate()
+					enemySpawnPos = arrowPoint
+					enemySpawnPos.x += cos(deg_to_rad(enemyRotation + angle + 180)) * 30 * i
+					enemySpawnPos.y += sin(deg_to_rad(enemyRotation + angle + 180)) * 30 * i
+					enemyToSpawn.global_position = enemySpawnPos
+					enemyToSpawn.rotation_degrees = enemyRotation
+					add_child(enemyToSpawn)
+					
+			addLine.call(arrowAngle)
+			addLine.call(-arrowAngle)
+				
 			
 func findRandValidSpawn(additionalRange = 0):
 	var validSpawnPos = Vector2.ZERO
