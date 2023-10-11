@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dobaxocx5rjjb"]
+
+[ext_resource type="Texture2D" uid="uid://cnfvubime54g8" path="res://Sprites/Attacks/Trash/empty.png" id="1_b7hc5"]
+
+[node name="Trash" type="Node2D"]
+
+[node name="TrashSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_b7hc5")
