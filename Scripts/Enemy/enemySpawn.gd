@@ -36,7 +36,7 @@ func _on_timer_timeout():
 		
 
 func spawn_enemy_pattern():
-	var patternId = randi_range(0, 3)
+	var patternId = randi_range(0, 4)
 	
 	match patternId:
 		0: # Circle of enemies
@@ -148,7 +148,23 @@ func spawn_enemy_pattern():
 					enemyToSpawn.SPEED = 5000
 					enemyToSpawn.get_node("MoveDelay").wait_time = 1.5	
 					add_child(enemyToSpawn)
-			
+					
+		4: # Stream of enemies towards players
+			const enemyCount = 20
+
+			var streamCenter = findRandValidSpawn()
+			var enemyToSpawn
+
+			for i in range(enemyCount):
+				enemyToSpawn = enemy.instantiate()
+				enemyToSpawn.global_position = streamCenter
+				enemyToSpawn.followPlayer = false
+				enemyToSpawn.SPEED = 25000		
+				enemyToSpawn.get_node("MoveDelay").wait_time = 0.1							
+				add_child(enemyToSpawn)
+				enemyToSpawn.look_at(Player.global_position)	
+				await get_tree().create_timer(0.1).timeout
+				
 			
 func findRandValidSpawn(additionalRange = 0):
 	var validSpawnPos = Vector2.ZERO
