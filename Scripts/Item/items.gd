@@ -10,7 +10,7 @@ func _ready():
 func addItem():
 	var instance = sceneInstance.instantiate()
 	
-	instance.itemId = randi_range(0, 4)
+	instance.itemId = randi_range(0, 5)
 	instance.position = \
 	Vector2(randi_range(50, get_viewport_rect().size.x) - 50, randi_range(50, get_viewport_rect().size.y) - 50)
 	call_deferred("add_child", instance)
