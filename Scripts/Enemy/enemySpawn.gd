@@ -8,7 +8,15 @@ const SPAWN_LIMIT = 300 # enemies will be spawned outside this distance from the
 var enemy = preload("res://Scenes/enemy.tscn")
 var timeCount = 0
 var patternTime = randi_range(5, 10)
+var level = 0
 
+
+func _process(delta):
+	var currentTimeSec = Time.get_ticks_msec() / 1000
+	if currentTimeSec > level and get_node("Timer").wait_time >= 0.2:
+		level = currentTimeSec
+		get_node("Timer").wait_time -= 0.01
+		
 
 func _on_timer_timeout():
 	var enemyToSpawn = enemy.instantiate()
