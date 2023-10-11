@@ -8,7 +8,7 @@ var offset = 65
 var fire = false
 
 
-func _process(delta):
+func _ready():
 	var tween = create_tween()
 	tween.tween_property(self, "scale", Vector2(5, 5), 1)	
 	
