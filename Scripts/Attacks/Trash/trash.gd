@@ -13,6 +13,11 @@ func _ready():
 	canAttack = true
 	tween = create_tween()
 	tween.tween_property(get_node("GravityRange/CollisionShape2D"), "scale", Vector2(1, 1), 0.2)
+	await get_tree().create_timer(4).timeout
+	tween = create_tween()
+	tween.tween_property(self, "scale", Vector2(0, 0), 0.1)
+	await get_tree().create_timer(0.1).timeout
+	self.queue_free()
 	
 
 func _process(delta):
