@@ -44,7 +44,7 @@ func _on_timer_timeout():
 		
 
 func spawn_enemy_pattern():
-	var patternId = randi_range(0, 4)
+	var patternId = randi_range(1, 1)
 	
 	match patternId:
 		0: # Circle of enemies
@@ -68,7 +68,7 @@ func spawn_enemy_pattern():
 				add_child(enemyToSpawn)
 				
 		1: # Circle around player
-			const enemyCount = 20
+			const enemyCount = 15
 			const circleRadius = 600
 			
 			var circleCenterPos = Player.global_position
@@ -81,6 +81,15 @@ func spawn_enemy_pattern():
 					circleCenterPos.x + sin(deg_to_rad(i * 360 / enemyCount)) * circleRadius
 				enemySpawnPos.y = \
 					circleCenterPos.y + cos(deg_to_rad(i * 360 / enemyCount)) * circleRadius
+				enemyToSpawn.global_position = enemySpawnPos
+				enemyToSpawn.SPEED = 8000
+				enemyToSpawn.get_node("MoveDelay").wait_time = 2
+				add_child(enemyToSpawn)
+				enemyToSpawn = enemy.instantiate()
+				enemySpawnPos.x = \
+					circleCenterPos.x + sin(deg_to_rad(i * 360 / enemyCount)) * circleRadius * 1.1
+				enemySpawnPos.y = \
+					circleCenterPos.y + cos(deg_to_rad(i * 360 / enemyCount)) * circleRadius * 1.1
 				enemyToSpawn.global_position = enemySpawnPos
 				enemyToSpawn.SPEED = 8000
 				enemyToSpawn.get_node("MoveDelay").wait_time = 2
