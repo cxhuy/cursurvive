@@ -1,6 +1,6 @@
 extends Node2D
 
-const DISC_NUM = 2
+const DISC_NUM = 3
 
 var disc = preload("res://Scenes/Attacks/disc.tscn")
 

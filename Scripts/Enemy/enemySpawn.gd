@@ -44,7 +44,7 @@ func _on_timer_timeout():
 		
 
 func spawn_enemy_pattern():
-	var patternId = randi_range(1, 1)
+	var patternId = randi_range(0, 4)
 	
 	match patternId:
 		0: # Circle of enemies

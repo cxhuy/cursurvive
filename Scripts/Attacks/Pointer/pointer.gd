@@ -10,12 +10,12 @@ var fire = false
 
 func _ready():
 	var tween = create_tween()
-	tween.tween_property(self, "scale", Vector2(5, 5), 1)	
+	tween.tween_property(self, "scale", Vector2(10, 10), 1)	
 	
 	
 func _physics_process(delta):
 	if !fire:
-		offset += 0.5
+		offset += 1.3
 		if (abs(get_global_mouse_position().x - self.global_position.x) > 0.01):
 			self.global_position = Player.global_position
 			self.rotation = Player.get_node("Marker2D").rotation

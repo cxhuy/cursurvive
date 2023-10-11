@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 const SPEED = 1000
-const DISC_SIZE = 0.2
+const DISC_SIZE = 0.3
 
 var velocity
 

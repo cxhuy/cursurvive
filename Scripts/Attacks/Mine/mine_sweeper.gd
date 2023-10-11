@@ -1,6 +1,6 @@
 extends Node2D
 
-const MINE_NUM = 3
+const MINE_NUM = 2
 
 var mine = preload("res://Scenes/Attacks/mine.tscn")
 
