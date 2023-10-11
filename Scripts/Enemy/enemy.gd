@@ -5,6 +5,7 @@ var SPEED = 10000
 @onready var Player = get_node("../../Player")
 var canMove = false
 var canKill = false
+var followPlayer = true
 
 
 func _ready():
@@ -15,7 +16,8 @@ func _ready():
 	
 	
 func _physics_process(delta):
-	look_at(Player.global_position)	
+	if followPlayer:
+		look_at(Player.global_position)	
 	
 	if canMove:
 		self.velocity = Vector2(cos(self.rotation), sin(self.rotation)) * SPEED * delta
