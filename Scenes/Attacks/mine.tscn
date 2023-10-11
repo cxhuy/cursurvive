@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Attacks/Mine/mine.gd" id="1_u3owd"]
 [ext_resource type="Texture2D" uid="uid://dyd7fj4c7o5uc" path="res://Sprites/Attacks/Mine/mine.png" id="2_w87oa"]
-[ext_resource type="Texture2D" uid="uid://yybdtvp0c86n" path="res://Sprites/Attacks/Mine/explosion.png" id="3_k4prd"]
+[ext_resource type="Texture2D" uid="uid://bgo1xf4o707d" path="res://Sprites/Attacks/Mine/explosion.png" id="3_k4prd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ina00"]
 radius = 32.0
