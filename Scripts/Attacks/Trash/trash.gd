@@ -4,6 +4,7 @@ const power = 175
 
 var canAttack = false
 var enemies_in_range
+var killCount = 0
 
 
 func _ready():
@@ -31,3 +32,6 @@ func _process(delta):
 
 func _on_attack_range_body_entered(body):
 	body.queue_free()
+	killCount += 1
+	if killCount >= 25:
+		get_node("TrashSprite").texture = load("res://Sprites/Attacks/Trash/full.png")
