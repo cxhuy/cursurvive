@@ -18,3 +18,10 @@ texture = ExtResource("1_gl6cb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1i33m")
+
+[node name="WallSpawn" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.01
+autostart = true
+
+[connection signal="timeout" from="WallSpawn" to="." method="_on_wall_spawn_timeout"]
