@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Attacks/Shield/shields.gd" id="1_tvcct"]
 
-[node name="Shields" type="Node2D"]
+[node name="Shields" type="Node2D" groups=["Shields"]]
 script = ExtResource("1_tvcct")
 
 [node name="Duration" type="Timer" parent="."]

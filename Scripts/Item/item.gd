@@ -45,6 +45,7 @@ func _on_area_2d_body_entered(body):
 				itemToUse.global_position = self.global_position
 				
 			5: # Shield attack
+				get_tree().call_group("Shields", "queue_free")
 				itemToUse = shields.instantiate()
 				itemToUse.global_position = self.global_position				
 	
