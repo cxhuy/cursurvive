@@ -1,3 +1,3 @@
 extends Node
 
-var player_dead = false
+var totalKillCount = 0

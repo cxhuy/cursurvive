@@ -36,7 +36,7 @@ func find_closest_enemy(enemies_in_range):
 		
 		
 func _on_attack_body_body_entered(body):
-	body.queue_free()
+	body.death()
 	
 
 func _on_timer_timeout():

@@ -17,7 +17,7 @@ func _physics_process(delta):
 
 
 func _on_attack_range_body_entered(body):
-	body.queue_free()
+	body.death()
 	
 
 func _on_duration_timeout():

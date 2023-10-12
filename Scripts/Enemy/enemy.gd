@@ -37,3 +37,8 @@ func _on_timer_timeout():
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	if !followPlayer:
 		self.queue_free()
+		
+		
+func death():
+	Game.totalKillCount += 1
+	self.queue_free()
