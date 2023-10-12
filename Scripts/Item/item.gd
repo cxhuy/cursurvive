@@ -47,7 +47,10 @@ func _on_area_2d_body_entered(body):
 			5: # Shield attack
 				get_tree().call_group("Shields", "queue_free")
 				itemToUse = shields.instantiate()
-				itemToUse.global_position = self.global_position				
+				itemToUse.global_position = self.global_position
+				
+			6: # Firewall attack
+				pass
 	
 	Game.call_deferred("add_child", itemToUse)
 	Game.get_node("Items").addItem()

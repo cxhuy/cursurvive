@@ -68,6 +68,4 @@ autostart = true
 [node name="Items" type="Node2D" parent="."]
 script = ExtResource("4_7sfbm")
 
-[node name="Shields" type="Node2D" parent="."]
-
 [connection signal="timeout" from="Enemies/Timer" to="Enemies" method="_on_timer_timeout"]

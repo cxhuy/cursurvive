@@ -1,6 +1,6 @@
 extends Sprite2D
 
-const itemNames = ["pointer","dvd", "busy", "mine", "trash", "shield"]
+const itemNames = ["pointer","dvd", "busy", "mine", "trash", "shield", "firewall"]
 
 @onready var imagePath = "res://Sprites/Items/" + itemNames[get_node("..").itemId] + "_item.png"
 
