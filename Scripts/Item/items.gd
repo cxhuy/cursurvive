@@ -1,6 +1,6 @@
 extends Node2D
 
-var sceneInstance = preload("res://Scenes/item.tscn")
+var item = preload("res://Scenes/item.tscn")
 
 func _ready():
 	for i in range(3):
@@ -8,10 +8,10 @@ func _ready():
 	
 	
 func addItem():
-	var instance = sceneInstance.instantiate()
+	var itemInstance = item.instantiate()
 	
-	instance.itemId = randi_range(0, 5)
-	instance.position = \
+	itemInstance.itemId = randi_range(0, 5)
+	itemInstance.position = \
 	Vector2(randi_range(50, get_viewport_rect().size.x) - 50, randi_range(50, get_viewport_rect().size.y) - 50)
-	call_deferred("add_child", instance)
+	call_deferred("add_child", itemInstance)
 	
