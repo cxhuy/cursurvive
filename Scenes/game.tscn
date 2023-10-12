@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c4ivcn2gw3idh"]
+[gd_scene load_steps=12 format=3 uid="uid://c4ivcn2gw3idh"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_2wx2f"]
 [ext_resource type="Texture2D" uid="uid://dn4iadu6sqrwe" path="res://background.jpeg" id="1_lb466"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/Item/items.gd" id="4_7sfbm"]
 [ext_resource type="Script" path="res://Scripts/Enemy/enemySpawn.gd" id="4_noyw3"]
 [ext_resource type="Script" path="res://Scripts/time.gd" id="6_1hbgn"]
+[ext_resource type="Script" path="res://Scripts/restartMenu.gd" id="7_3et18"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uunlo"]
 size = Vector2(1984, 32)
@@ -68,4 +69,23 @@ autostart = true
 [node name="Items" type="Node2D" parent="."]
 script = ExtResource("4_7sfbm")
 
+[node name="RestartMenu" type="Control" parent="."]
+process_mode = 2
+visible = false
+z_index = 5
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_3et18")
+
+[node name="RestartButton" type="Button" parent="RestartMenu"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1200.0
+theme_override_font_sizes/font_size = 100
+text = "Press to restart"
+icon_alignment = 1
+
 [connection signal="timeout" from="Enemies/Timer" to="Enemies" method="_on_timer_timeout"]
+[connection signal="pressed" from="RestartMenu/RestartButton" to="RestartMenu" method="restartGame"]

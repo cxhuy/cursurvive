@@ -12,4 +12,5 @@ func _physics_process(delta):
 	
 func death():
 	get_tree().paused = true
+	get_node("../RestartMenu").show()
 #	self.queue_free()
