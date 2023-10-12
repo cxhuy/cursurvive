@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://c4ivcn2gw3idh"]
+[gd_scene load_steps=11 format=3 uid="uid://c4ivcn2gw3idh"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_2wx2f"]
 [ext_resource type="Texture2D" uid="uid://dn4iadu6sqrwe" path="res://background.jpeg" id="1_lb466"]
 [ext_resource type="PackedScene" uid="uid://c2edtnna75yxj" path="res://Scenes/player.tscn" id="2_td4pr"]
 [ext_resource type="Script" path="res://Scripts/Item/items.gd" id="4_7sfbm"]
 [ext_resource type="Script" path="res://Scripts/Enemy/enemySpawn.gd" id="4_noyw3"]
+[ext_resource type="Script" path="res://Scripts/time.gd" id="6_1hbgn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uunlo"]
 size = Vector2(1984, 32)
@@ -24,6 +25,16 @@ script = ExtResource("1_2wx2f")
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(960, 600)
 texture = ExtResource("1_lb466")
+
+[node name="Time" type="Label" parent="."]
+modulate = Color(0, 0, 0, 0.196078)
+offset_right = 1920.0
+offset_bottom = 1200.0
+theme_override_font_sizes/font_size = 500
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_1hbgn")
 
 [node name="Player" parent="." instance=ExtResource("2_td4pr")]
 position = Vector2(960, 600)
