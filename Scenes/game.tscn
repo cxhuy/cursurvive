@@ -87,5 +87,16 @@ theme_override_font_sizes/font_size = 100
 text = "Press to restart"
 icon_alignment = 1
 
+[node name="Label" type="Label" parent="RestartMenu"]
+layout_mode = 0
+offset_top = 250.0
+offset_right = 1920.0
+offset_bottom = 350.0
+theme_override_font_sizes/font_size = 45
+text = "You survived for XX.XX seconds
+and killed X enemies"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="timeout" from="Enemies/Timer" to="Enemies" method="_on_timer_timeout"]
 [connection signal="pressed" from="RestartMenu/RestartButton" to="RestartMenu" method="restartGame"]
