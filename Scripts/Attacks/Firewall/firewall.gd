@@ -16,10 +16,13 @@ func _physics_process(delta):
 		velocity = velocity.bounce(collision.get_normal())
 	velocity *= friction
 	
-
-func _on_wall_spawn_timeout():
 	if wallSpawned < wallCount:
 		wallInstance = wall.instantiate()
 		wallInstance.global_position = self.global_position
 		get_node("../..").add_child(wallInstance)
 		wallSpawned += 1
+	else:
+		var tween = create_tween()
+		tween.tween_property(self, "scale", Vector2(0, 0), 0.1)
+		await get_tree().create_timer(0.1).timeout
+		self.queue_free()
