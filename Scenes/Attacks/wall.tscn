@@ -1,19 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://cm84mgypdfnch"]
+[gd_scene load_steps=4 format=3 uid="uid://cm84mgypdfnch"]
 
+[ext_resource type="Script" path="res://Scripts/Attacks/Firewall/wall.gd" id="1_0udmw"]
 [ext_resource type="Texture2D" uid="uid://cdkrfldejn4x7" path="res://Sprites/Attacks/Firewall/wall.png" id="1_do4ea"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahlik"]
 size = Vector2(38, 37)
 
 [node name="Wall" type="Node2D"]
+script = ExtResource("1_0udmw")
 
 [node name="WallSprite" type="Sprite2D" parent="."]
 position = Vector2(4, 0)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_do4ea")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="AttackRange" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
 position = Vector2(4, -0.5)
 shape = SubResource("RectangleShape2D_ahlik")
+
+[connection signal="body_entered" from="AttackRange" to="." method="_on_attack_range_body_entered"]
