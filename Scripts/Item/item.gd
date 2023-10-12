@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 @onready var Game = get_node("../..")
+@onready var Player = get_node("../../Player")
 
 var pointer = preload("res://Scenes/Attacks/pointer.tscn")
 var dvd = preload("res://Scenes/Attacks/dvd.tscn")
@@ -53,6 +54,7 @@ func _on_area_2d_body_entered(body):
 			6: # Firewall attack
 				itemToUse = firewall.instantiate()
 				itemToUse.global_position = self.global_position
+				itemToUse.velocity = Player.velocity
 	
 	Game.call_deferred("add_child", itemToUse)
 	Game.get_node("Items").addItem()

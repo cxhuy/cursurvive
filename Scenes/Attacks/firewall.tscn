@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1dbev84bbgid"]
+[gd_scene load_steps=4 format=3 uid="uid://b1dbev84bbgid"]
 
+[ext_resource type="Script" path="res://Scripts/Attacks/Firewall/firewall.gd" id="1_3ki13"]
 [ext_resource type="Texture2D" uid="uid://6dgjelrvn2ah" path="res://Sprites/Attacks/Firewall/firewall.png" id="1_gl6cb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1i33m"]
@@ -9,6 +10,7 @@ radius = 36.0
 collision_layer = 16
 collision_mask = 4
 gravity_scale = 0.0
+script = ExtResource("1_3ki13")
 
 [node name="FirewallSprite" type="Sprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
