@@ -29,5 +29,6 @@ func _ready():
 	shieldInstance.global_position = self.global_position + Vector2(-RADIUS, 0)
 	
 
-func _process(delta):
+func _physics_process(delta):
 	self.global_position = Player.global_position
+	self.rotation_degrees += 2.5
