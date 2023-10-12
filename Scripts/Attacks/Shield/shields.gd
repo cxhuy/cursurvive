@@ -32,3 +32,7 @@ func _ready():
 func _physics_process(delta):
 	self.global_position = Player.global_position
 	self.rotation_degrees += 2.5
+	
+
+func _on_timer_timeout():
+	self.queue_free()
